@@ -2,6 +2,7 @@ schemaVersion: 2.1.0
 metadata:
   generateName: quarkus-api-example-demo
 attributes:
+  controller.devfile.io/storage-type: ephemeral
   controller.devfile.io/scc: container-build
 components:
   - name: tools
@@ -50,6 +51,8 @@ commands:
       group:
         kind: test
   - id: packagenative
+
+
     exec:
       label: "Package Native"
       component: tools
