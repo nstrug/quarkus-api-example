@@ -64,8 +64,9 @@ commands:
     exec:
       label: "Build Image"
       component: tools
+      pod
       workingDir: ${PROJECT_SOURCE}
-      commandLine: "podman build -f src/main/docker/Dockerfile.jvm -t image-registry.openshift-image-registry.svc:5000/openshift/quarkus-api-example ."
+      commandLine: "podman build -f src/main/docker/Dockerfile.jvm -t image-registry.openshift-image-registry.svc:5000/rhn-gps-nstrug-dev/quarkus-api-example ."
       group:
         kind: build
   - id: loginlocalregistry
@@ -81,7 +82,7 @@ commands:
       label: "Push Image"
       component: tools
       workingDir: ${PROJECT_SOURCE}
-      commandLine: "podman push --tls-verify=false image-registry.openshift-image-registry.svc:5000/openshift/quarkus-api-example"
+      commandLine: "podman push --tls-verify=false image-registry.openshift-image-registry.svc:5000/rhn-gps-nstrug-dev/quarkus-api-example"
       group:
         kind: build
   - id: startdev

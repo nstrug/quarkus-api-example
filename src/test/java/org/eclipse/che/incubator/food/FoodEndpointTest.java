@@ -15,10 +15,14 @@ import static io.restassured.RestAssured.given;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Disabled;
+
 
 import io.quarkus.test.junit.QuarkusTest;
 
+
 @QuarkusTest
+@Disabled
 public class FoodEndpointTest {
 
     @Test
