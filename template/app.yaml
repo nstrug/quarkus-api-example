@@ -24,6 +24,20 @@ spec:
     app.kubernetes.io/version: 1.0.0-SNAPSHOT
   type: ClusterIP
 ---
+apiVersion: v1
+kind: Route
+metadata:
+  labels:
+    app.kubernetes.io/name: quarkus-api-example
+    app.kubernetes.io/version: 1.0.0-SNAPSHOT
+  name: quarkus-api-example
+spec:
+  port:
+    targetPort: http
+  to:
+    kind: Service
+    name: quarkus-api-example
+---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
